@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tassianeanzolin/Projects/GerenciamentoVendasLojaRoupas/GerenciamentoVendasLojaRoupas/GerenciamentoVendasLojaRoupas.csproj",
+      "projectUniqueName": "/Users/tassianeanzolin/Music/Gamificacao-1/GerenciamentoVendasLojaRoupas/GerenciamentoVendasLojaRoupas.csproj",
       "projectName": "GerenciamentoVendasLojaRoupas",
-      "projectPath": "/Users/tassianeanzolin/Projects/GerenciamentoVendasLojaRoupas/GerenciamentoVendasLojaRoupas/GerenciamentoVendasLojaRoupas.csproj",
+      "projectPath": "/Users/tassianeanzolin/Music/Gamificacao-1/GerenciamentoVendasLojaRoupas/GerenciamentoVendasLojaRoupas.csproj",
       "packagesPath": "/Users/tassianeanzolin/.nuget/packages/",
-      "outputPath": "/Users/tassianeanzolin/Projects/GerenciamentoVendasLojaRoupas/GerenciamentoVendasLojaRoupas/obj/",
+      "outputPath": "/Users/tassianeanzolin/Music/Gamificacao-1/GerenciamentoVendasLojaRoupas/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/tassianeanzolin/.nuget/NuGet/NuGet.Config"
