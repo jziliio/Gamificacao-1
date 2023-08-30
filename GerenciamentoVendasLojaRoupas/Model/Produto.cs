@@ -5,9 +5,9 @@ namespace GerenciamentoVendasLojaRoupas
     public class Produto
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
-        public decimal Preco { get; set; }
-        public Categoria Categoria { get; set; }
+        public required string Nome { get; set; }
+        public required string Descricao { get; set; }
+        public required decimal Preco { get; set; }
+        public required Categoria Categoria { get; set; }
     }
 }
