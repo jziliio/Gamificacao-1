@@ -1,0 +1,5 @@
+C:\Users\João Zilio\Documents\GitHub\Gamificacao-1\GerenciamentoVendasLojaRoupas\obj\Debug\net7.0\GerenciamentoVendasLojaRoupas.csproj.AssemblyReference.cache
+C:\Users\João Zilio\Documents\GitHub\Gamificacao-1\GerenciamentoVendasLojaRoupas\obj\Debug\net7.0\GerenciamentoVendasLojaRoupas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\João Zilio\Documents\GitHub\Gamificacao-1\GerenciamentoVendasLojaRoupas\obj\Debug\net7.0\GerenciamentoVendasLojaRoupas.AssemblyInfoInputs.cache
+C:\Users\João Zilio\Documents\GitHub\Gamificacao-1\GerenciamentoVendasLojaRoupas\obj\Debug\net7.0\GerenciamentoVendasLojaRoupas.AssemblyInfo.cs
+C:\Users\João Zilio\Documents\GitHub\Gamificacao-1\GerenciamentoVendasLojaRoupas\obj\Debug\net7.0\GerenciamentoVendasLojaRoupas.csproj.CoreCompileInputs.cache

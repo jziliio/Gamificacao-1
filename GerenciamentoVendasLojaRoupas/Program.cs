@@ -55,14 +55,14 @@ namespace GerenciamentoVendasLojaRoupas
             Console.WriteLine ("2 - Alterar categoria");
             Console.WriteLine ("3 - Buscar por todas as categorias");
             Console.WriteLine ("4 - Buscar categoria atraves do ID");
-            Console.WriteLine ("5 - Remover categoria")
+            Console.WriteLine ("5 - Remover categoria");
 
             int opcao = int.Parse(Console.ReadLine());
 
             switch (opcao)
             {
                 case 1:
-                    Console.Wtrite("Nome da categoria: ");
+                    Console.Write("Nome da categoria: ");
                     string nomeCategoria = Console.ReadLine();
                     Console.Write("Descrição da categoria: ");
                     string descricaoCategoria = Console.ReadLine();
@@ -75,7 +75,7 @@ namespace GerenciamentoVendasLojaRoupas
                     int idCategoriaAlterar = int.Parse(Console.ReadLine());
 
                     Categoria CategoriaAlterar = categoriaUI.BuscarCategoriaId(idCategoriaAlterar);
-                    if (CategoriaAlterar != NULL)
+                    if (CategoriaAlterar != null)
                     {
                         Console.Write("Novo nome da categoria: ");
                         string novoNomeCategoria = Console.ReadLine();
@@ -83,11 +83,11 @@ namespace GerenciamentoVendasLojaRoupas
                         string novaDescricaoCategoria = Console.ReadLine();
 
                         categoriaUI.AlterarCategoria(idCategoriaAlterar, novoNomeCategoria, novaDescricaoCategoria);
-                        Console.WtriteLine("Categoria alterada.")
+                        Console.WriteLine("Categoria alterada.");
                     }
                     else
                     {
-                        Console.WtriteLine("Categoria desconhecida.");
+                        Console.WriteLine("Categoria desconhecida.");
                     }
                     break;
                 case 3:
@@ -102,13 +102,13 @@ namespace GerenciamentoVendasLojaRoupas
                     int idCategoriaBuscar = int.Parse(Console.ReadLine());
 
                     Categoria categoriaBuscar = categoriaUI.BuscarCategoriaId(idCategoriaBuscar);
-                    if (categoriaBuscar != NULL)
+                    if (categoriaBuscar != null)
                     {
                         Console.WriteLine($"ID: {categoriaBuscar.Id}, Nome: {categoriaBuscar.Nome}, Descricao: {categoriaBuscar.Descricao}");
                     }
                     else
                     {
-                        Console.WriteLine("Categoria não encontrada.")
+                        Console.WriteLine("Categoria não encontrada.");
                     }
                     break;
                 case 5:
@@ -120,133 +120,9 @@ namespace GerenciamentoVendasLojaRoupas
                     break;
                     
                 default:
-                    Console.WriteLine("Opção inválida.")
+                    Console.WriteLine("Opção inválida.");
                     break;
             }
         }
-
-        static void gerenciamentoProdutos(ProdutoUI produtoUI)
-        {
-            Console.WriteLine("Selecione a opção desejada: ");
-            Console.WriteLine("1 - Registrar produtos");
-            Console.WriteLine("2 - Alterar produto");
-            Console.WriteLine("3 - Buscar por todos os produtos");
-            Console.WriteLine("4 - Buscar produto através do ID");
-            Console.WriteLine("5 - Remover produto");
-            
-            int opcao = int.Parse(Console.ReadLine());
-
-            switch (opcao)
-            {
-                case 1:
-                    Console.Write("Nome do produto: ");
-                    string nomeProduto = Console.ReadLine();
-                    Console.Write("Descrição do produto: ");
-                    string descricaoProduto = Console.ReadLine();
-                    Console.Write("Preço do produto: ");
-                    decimal precoProduto = decimal.Parse(Console.ReadLine());
-
-                    Console.WriteLine("Categorias: ");
-                    List<Categoria> categorias = categoriaUI.BuscarTodasCategorias();
-                    foreach (Categoria categoria in categorias)
-                    {
-                        Console.WriteLine($"ID: {categoria.Id}, Nome: {categoria.Nome}");
-                    }
-
-                    Console.Write("ID da categoria do produto: ");
-                    int idCategoriaProduto = int.Parse(Console.ReadLine());
-
-                    Categoria categoriaProduto = categorias.Find(c => c.Id == idCategoriaProduto);
-                    if (categoriaProduto == NULL)
-                    {
-                        Console.WriteLine("Categoria desconhecida.");
-                        break;
-                    }
-
-                    produtoUI.RegistrarProduto(nomeProduto, descricaoProduto, precoProduto, categoriaProduto);
-                    Console.WriteLine("Produto registrado.");
-                    break; 
-                case 2:
-                    Console.Write("ID do produto que será alterado: ");
-                    int idProdutoAlterar = int.Parse(Console.ReadLine());
-
-                    Produto produtoAlterar =produtoUI.BuscarProdutoId(idProdutoAlterar);
-                    if (produtoAlterar != NULL)
-                    {
-                        Console.Write("Novo nome do produto: ");
-                        string novoNomeProduto = Console.ReadLine();
-                        Console.Write("Nova descrição do produto: ");
-                        string novaDescricaoProduto = Console.ReadLine();
-                        Console.Write("Novo preço do produto: ");
-                        decimal novoPrecoProduto = decimal.Parse(Console.ReadLine());
-
-                        Console.WriteLine("Categorias disponíveis:");
-                        List<Categoria> categorias = categoriaUI.BuscarTodasCategorias();
-                        foreach (Categoria categoria in categorias)
-                        {
-                            Console.WriteLine($"ID: {categoria.Id}, Nome: {categoria.Nome}");
-                        }
-
-                        Console.Write("ID da nova categoria do produto: ");
-                        int idNovaCategoriaProduto = int.Parse(Console.ReadLine());
-
-                        Categoria novaCategoriaProduto = categorias.Find(c => c.Id == idNovaCategoriaProduto);
-                        if (novaCategoriaProduto == NULL)
-                        {
-                            Console.WriteLine("Nova categoria desconhecida.");
-                            break;
-                        }
-
-                        produtoUI.AlterarProduto(idProdutoAlterar, novoNomeProduto, novaDescricaoProduto, novoPrecoProduto, novaCategoriaProduto);
-                        Console.WriteLine("Produto alterado.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Produto desconhecido.");
-                    }
-                    break;
-                case 3:
-                    List<Produto> todosProdutos = produtoUI.BuscarTodosProdutos();
-                    if (todosProdutos.Count > 0)
-                    {
-                        Console.WriteLine("Lista com todos os produtos:");
-                        foreach (Produto produto in todosProdutos)
-                        {
-                            Console.WriteLine($"ID: {produto.Id}, Nome: {produto.nome}, Preço: {produto.preco}");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Nenhum produto foi encontrado.");
-                    }
-                    break;
-                case 4:
-                    Console.Write("Informe o ID do produto buscado: ");
-                    int idProdutoBuscar = int.Parse(Console.ReadLine());
-
-                    Produto produtoBuscar = produtoUI.BuscarProdutoId(idProdutoBuscar);
-                    if (produtoBuscar != NULL)
-                    {
-                        Console.WriteLine($"Produto encontrado:");
-                        Console.WriteLine($"ID: {produtoBuscar.Id}, Nome: {produtoBuscar.Nome}, Descrição: {produtoBuscar.Descricao}, Preço: {produtoBuscar.Preco}");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Produto não encontrado.");
-                    }
-                    break;
-                case 5:
-                    Console.Write("Informe o ID do produto que será removido: ");
-                    int idProdutoRemover = int.Parse(Console.ReadLine());
-
-                    produtoUI.RemoverProduto(idProdutoRemover);
-                    Console.WriteLine("Produto removido.");
-                    break;
-                
-                default:
-                    Console.WriteLine("Opção inválida.");
-                    break;
-            }  
-        }    
     }
 }

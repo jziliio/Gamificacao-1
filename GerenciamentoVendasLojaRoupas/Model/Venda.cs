@@ -6,9 +6,9 @@ namespace GerenciamentoVendasLojaRoupas
     public class Venda
     {
         public int Id { get; set; }
-        public Cliente Cliente { get; set; }
-        public List<Produto> Produtos { get; set; }
-        public DateTime DataVenda { get; set; }
-        public decimal ValorTotal { get; set; }
+        public required Cliente Cliente { get; set; }
+        public required List<Produto> Produtos { get; set; }
+        public required DateTime DataVenda { get; set; }
+        public required decimal ValorTotal { get; set; }
     }
 }
